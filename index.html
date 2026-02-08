@@ -154,10 +154,13 @@
     <p>Passage stores all of your books, notes, and captured images locally on your device using on-device storage. This data never leaves your device unless you explicitly choose to export or share it. We do not have access to your library content.</p>
 
     <p><strong>Camera and photo library</strong></p>
-    <p>Passage requests access to your device's camera and photo library so you can capture book covers and pages. Photos you take or select are stored locally on your device. We do not upload your photos to any server except as described below for text recognition.</p>
+    <p>Passage requests access to your device's camera and photo library so you can capture book covers and pages. Photos you take or select are stored locally on your device. We do not upload your photos to any server except as described below for optional book cover recognition.</p>
 
     <p><strong>Text recognition (OCR)</strong></p>
-    <p>When you use the text recognition feature, images of book pages may be sent to OpenAI's API for processing. This is done solely to extract text from your photos. We do not store these images on our servers. OpenAI's use of this data is governed by <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">OpenAI's API data usage policy</a>.</p>
+    <p>When you extract text from a book page, Passage performs text recognition on-device using your phone’s built-in OCR capabilities (such as Apple Vision on iOS). Your book page images are not uploaded to our servers for OCR.</p>
+
+    <p><strong>Book cover recognition</strong></p>
+    <p>If you choose to scan a book cover to automatically detect the title and author, the cover image may be sent to OpenAI's API for processing. This is used only to identify the book title and author. We do not store these images on our servers. OpenAI's use of this data is governed by <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">OpenAI's API data usage policy</a>.</p>
 
     <p><strong>Analytics</strong></p>
     <p>We use <a href="https://posthog.com" target="_blank">PostHog</a>, a product analytics service, to collect anonymous usage data such as which features are used, screen views, and general interaction patterns. This helps us understand how to improve the app. Analytics data does not include the content of your books, notes, or photos. You are not personally identified through analytics.</p>
@@ -177,14 +180,15 @@
     <p>We use the information described above to:</p>
     <ul>
       <li>Provide the core app functionality (capturing and organizing book notes).</li>
-      <li>Process text recognition requests via OpenAI's API.</li>
+      <li>Perform text recognition on-device to extract text from book pages.</li>
+      <li>Process optional book cover recognition (title/author detection) via OpenAI's API.</li>
       <li>Understand app usage patterns to improve features and fix bugs.</li>
     </ul>
 
     <h2>5. Third-Party Services</h2>
     <p>Passage uses the following third-party services:</p>
     <ul>
-      <li><strong>OpenAI API</strong> — for text recognition (OCR) from book page images. <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a></li>
+      <li><strong>OpenAI API</strong> — for optional book cover recognition (extracting title/author from a cover photo). <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a></li>
       <li><strong>PostHog</strong> — for anonymous product analytics. <a href="https://posthog.com/privacy" target="_blank">PostHog Privacy Policy</a></li>
       <li><strong>Open Library / Google Books</strong> — for fetching book cover images based on title and author. No personal data is sent to these services.</li>
     </ul>
